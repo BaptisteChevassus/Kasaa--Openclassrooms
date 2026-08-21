@@ -1,11 +1,8 @@
+import Router from './router/Router'
 import './App.css'
 
 function App() {
-  return (
-    <div>
-      <h1>Kasa</h1>
-    </div>
-  )
+  return <Router />
 }
 
 export default App
