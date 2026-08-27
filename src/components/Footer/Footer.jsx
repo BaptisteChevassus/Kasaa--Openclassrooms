@@ -1,7 +1,13 @@
-import './Footer.jsx'
+import logo from '../../assets/Kasa-logo-blanc.png'
+import './Footer.scss'
 
 function Footer() {
-  return <footer>© Kasa {new Date().getFullYear()}</footer>
+  return (
+    <footer className="footer">
+      <img src={logo} alt="Kasa" className="footer__logo" />
+      <p>© 2020 Kasa. All rights reserved</p>
+    </footer>
+  )
 }
 
 export default Footer
