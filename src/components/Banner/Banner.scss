@@ -8,7 +8,6 @@
   align-items: center;
   border-radius: vars.$radius-default;
   overflow: hidden;
-  margin-bottom: 43px;
   height: 223px;
 
   img {
@@ -24,7 +23,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, var(--banner-overlay-opacity, 0.6));
     z-index: 1;
   }
 
@@ -48,7 +47,6 @@
     align-items: flex-start;
     border-radius: vars.$radius-sm;
     height: 111px;
-    margin-bottom: 22px;
 
     h1 {
       font-size: 24px;

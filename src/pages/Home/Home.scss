@@ -1,6 +1,14 @@
 @use '../../styles/variables' as vars;
 @use '../../styles/mixins' as mixins;
 
+.home .banner {
+  margin-bottom: 43px;
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    margin-bottom: 22px;
+  }
+}
+
 .cards-list {
   @include mixins.container;
   display: grid;
@@ -8,7 +16,7 @@
   row-gap: 50px;
   column-gap: 60px;
   padding: 56px 50px 43px;
-  background-color: #f6f6f6;
+  background-color: vars.$color-surface;
   border-radius: vars.$radius-default;
   margin-bottom: 50px;
 

@@ -1,0 +1,97 @@
+@use '../../styles/variables' as vars;
+
+.collapse {
+  width: 100%;
+  border-radius: vars.$radius-sm;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 20px 10px 15px;
+    background-color: vars.$color-primary;
+  }
+
+  &__title {
+    margin: 0;
+    color: vars.$color-text-light;
+    font-weight: 700;
+    font-size: vars.$font-size-body;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__chevron {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+    transition: transform 300ms ease;
+  }
+
+  &__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease;
+    background-color: rgba(vars.$color-surface, 0.45);
+  }
+
+  &__content {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  &__inner {
+    padding: 20px;
+    color: vars.$color-black;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  &--open {
+    .collapse__chevron {
+      transform: rotate(90deg);
+    }
+
+    .collapse__panel {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    &__header {
+      padding: 5px 10px;
+    }
+
+    &__title {
+      font-size: 13px;
+    }
+
+    &__toggle {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__inner {
+      padding: 12px;
+      font-size: vars.$font-size-body-mobile;
+    }
+  }
+}

@@ -6,7 +6,7 @@ import './Home.scss'
 
 function Home() {
   return (
-    <div>
+    <div className="home">
       <Banner
         image={bannerImage}
         title={
