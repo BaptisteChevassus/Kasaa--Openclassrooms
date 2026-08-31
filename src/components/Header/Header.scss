@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 45px;
-  margin-bottom: 50px;
 
   &__logo {
     display: block;
@@ -33,7 +32,6 @@
 
   @media (max-width: vars.$breakpoint-mobile) {
     margin-top: 20px;
-    margin-bottom: 27px;
 
     &__logo {
       width: 145px;

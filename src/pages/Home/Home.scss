@@ -1,11 +1,19 @@
 @use '../../styles/variables' as vars;
 @use '../../styles/mixins' as mixins;
 
-.home .banner {
-  margin-bottom: 43px;
+.home {
+  margin-top: 50px;
 
   @media (max-width: vars.$breakpoint-mobile) {
-    margin-bottom: 22px;
+    margin-top: 27px;
+  }
+
+  .banner {
+    margin-bottom: 43px;
+
+    @media (max-width: vars.$breakpoint-mobile) {
+      margin-bottom: 22px;
+    }
   }
 }
 
