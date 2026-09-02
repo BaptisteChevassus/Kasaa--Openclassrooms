@@ -1,0 +1,129 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mixins;
+
+.logement {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  &__info {
+    @include mixins.container;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'title    host'
+      'location host'
+      'tags     rating';
+    align-items: center;
+    row-gap: 8px;
+    column-gap: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media (max-width: vars.$breakpoint-mobile) {
+      grid-template-areas:
+        'title    title'
+        'location location'
+        'tags     tags'
+        'rating   host';
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    margin: 0;
+    color: vars.$color-primary;
+    font-weight: 500;
+    font-size: 36px;
+  }
+
+  &__location {
+    grid-area: location;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  &__tags {
+    grid-area: tags;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__rating {
+    grid-area: rating;
+  }
+
+  &__host {
+    grid-area: host;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 16px;
+
+    p {
+      margin: 0;
+      max-width: 120px;
+      color: vars.$color-primary;
+      font-weight: 500;
+      font-size: 18px;
+      text-align: right;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__collapses {
+    @include mixins.container;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    @media (min-width: vars.$breakpoint-mobile + 1px) {
+      .collapse__title {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: vars.$breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    margin-top: 27px;
+    margin-bottom: 27px;
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__location {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &__host {
+      p {
+        font-size: 12px;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}

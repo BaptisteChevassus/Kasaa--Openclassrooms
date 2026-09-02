@@ -1,0 +1,15 @@
+@use '../../styles/variables' as vars;
+
+.rating {
+  display: flex;
+  gap: 4px;
+
+  &__star {
+    color: #e0e0e0;
+    font-size: vars.$font-size-body;
+
+    &--filled {
+      color: vars.$color-primary;
+    }
+  }
+}

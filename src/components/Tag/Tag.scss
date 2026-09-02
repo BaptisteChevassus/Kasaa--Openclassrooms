@@ -1,0 +1,14 @@
+@use '../../styles/variables' as vars;
+
+.tag {
+  padding: 4px 12px;
+  border-radius: vars.$radius-sm;
+  background-color: vars.$color-primary;
+  color: vars.$color-text-light;
+  font-weight: 700;
+  font-size: 14px;
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    font-size: 10px;
+  }
+}
