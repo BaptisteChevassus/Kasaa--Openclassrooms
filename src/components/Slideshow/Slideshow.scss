@@ -1,0 +1,70 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/mixins' as mixins;
+
+@keyframes slideshow-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.slideshow {
+  @include mixins.container;
+  position: relative;
+  aspect-ratio: 3 / 1;
+  border-radius: vars.$radius-default;
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: slideshow-fade 200ms ease;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    width: 20px;
+    height: 34px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--prev {
+      left: 24px;
+    }
+
+    &--next {
+      right: 24px;
+      rotate: 180deg;
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    translate: -50% 0;
+    color: vars.$color-text-light;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  @media (max-width: vars.$breakpoint-mobile) {
+    aspect-ratio: 3 / 2;
+    border-radius: vars.$radius-sm;
+
+    &__arrow {
+      width: 14px;
+      height: 24px;
+    }
+  }
+}
