@@ -1,17 +1,16 @@
-import { useParams } from 'react-router'
+import { Navigate, useParams } from 'react-router'
 import logements from '../../data/logements.json'
 import Slideshow from '../../components/Slideshow/Slideshow'
 import Tag from '../../components/Tag/Tag'
 import Rating from '../../components/Rating/Rating'
 import Collapse from '../../components/Collapse/Collapse'
-import Error404 from '../Error404/Error404'
 import './Logement.scss'
 
 function Logement() {
   const { id } = useParams()
   const logement = logements.find((item) => item.id === id)
 
-  if (!logement) return <Error404 />
+  if (!logement) return <Navigate to="/404" replace />
 
   const { title, pictures, location, tags, rating, host, description, equipments } = logement
 

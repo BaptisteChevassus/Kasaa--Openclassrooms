@@ -12,6 +12,7 @@ function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/logement/:id" element={<Logement />} />
         <Route path="/a-propos" element={<About />} />
+        <Route path="/404" element={<Error404 />} />
         <Route path="*" element={<Error404 />} />
       </Route>
     </Routes>
