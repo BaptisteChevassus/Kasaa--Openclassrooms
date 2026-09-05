@@ -19,7 +19,7 @@ function Logement() {
     <div className="logement">
       <Slideshow images={pictures} />
       <div className="logement__info">
-        <h1 className="logement__title">{title}</h1>
+        <h2 className="logement__title">{title}</h2>
         <p className="logement__location">{location}</p>
         <div className="logement__tags">
           {tags.map((tag) => (
@@ -35,10 +35,10 @@ function Logement() {
         </div>
       </div>
       <div className="logement__collapses">
-        <Collapse title="Description">
+        <Collapse title="Description" titleAs="h3">
           <p>{description}</p>
         </Collapse>
-        <Collapse title="Équipements">
+        <Collapse title="Équipements" titleAs="h3">
           <ul>
             {equipments.map((equipment) => (
               <li key={equipment}>{equipment}</li>

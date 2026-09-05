@@ -29,7 +29,7 @@ const valeurs = [
 function About() {
   return (
     <div className="about">
-      <h1 className="sr-only">À propos</h1>
+      <h2 className="sr-only">À propos</h2>
       <Banner image={aboutBanner} overlayOpacity={0.3} />
       <div className="about__values">
         {valeurs.map((valeur) => (

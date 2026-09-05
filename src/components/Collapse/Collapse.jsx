@@ -2,13 +2,13 @@ import { useState } from 'react'
 import chevron from '../../assets/chevron.svg'
 import './Collapse.scss'
 
-function Collapse({ title, children, defaultOpen = false }) {
+function Collapse({ title, children, defaultOpen = false, titleAs: Title = 'h2' }) {
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
     <div className={`collapse${isOpen ? ' collapse--open' : ''}`}>
       <div className="collapse__header">
-        <h2 className="collapse__title">{title}</h2>
+        <Title className="collapse__title">{title}</Title>
         <button
           type="button"
           className="collapse__toggle"

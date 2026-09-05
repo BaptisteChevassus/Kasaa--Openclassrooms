@@ -9,9 +9,11 @@ function navLinkClassName({ isActive }) {
 function Header() {
   return (
     <header className="header">
-      <NavLink to="/">
-        <img src={logo} alt="Kasa" className="header__logo" />
-      </NavLink>
+      <h1 className="header__heading">
+        <NavLink to="/">
+          <img src={logo} alt="Kasa" className="header__logo" />
+        </NavLink>
+      </h1>
       <nav className="header__nav">
         <NavLink to="/" end className={navLinkClassName}>
           Accueil
